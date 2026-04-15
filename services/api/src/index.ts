@@ -1,9 +1,12 @@
 import express, { Request, Response } from "express";
+import { requestLogger } from "./middleware/requestLogger";
+import healthRoutes from "./routes/health";
 
 const app = express();
 const PORT = 4000;
 
 app.use(express.json());
+app.use(requestLogger);
 
 app.get("/", (_req: Request, res: Response) => {
   res.json({
@@ -11,13 +14,7 @@ app.get("/", (_req: Request, res: Response) => {
   });
 });
 
-app.get("/health", (_req: Request, res: Response) => {
-  res.status(200).json({
-    status: "ok",
-    service: "api",
-    timestamp: new Date().toISOString()
-  });
-});
+app.use("/", healthRoutes);
 
 app.listen(PORT, () => {
   console.log(`API running on http://localhost:${PORT}`);
