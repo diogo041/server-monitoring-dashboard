@@ -9,11 +9,19 @@ A backend and DevOps-focused personal project to build a server monitoring and l
 - Integrate Prometheus, Grafana, and Loki
 - Practice production-style DevOps workflows with daily PRs
 
-## Day 1
+## Progress
+
+### Day 1
 - Project initialized
 - TypeScript + Express API created
 - Base folder structure added
-- Health endpoint added
+- Initial health endpoint added
+
+### Day 2
+- Added request logging middleware
+- Moved health routes into a separate route file
+- Added readiness endpoint
+- Improved API structure for future monitoring features
 
 ## Planned Stack
 - Node.js
