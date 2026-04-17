@@ -23,6 +23,12 @@ A backend and DevOps-focused personal project to build a server monitoring and l
 - Added readiness endpoint
 - Improved API structure for future monitoring features
 
+### Day 3
+- Added Dockerfile for the API service
+- Added .dockerignore for cleaner builds
+- Built the API into a container image
+- Ran the API in Docker and tested endpoints
+
 ## Planned Stack
 - Node.js
 - TypeScript
