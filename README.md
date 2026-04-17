@@ -29,11 +29,18 @@ A backend and DevOps-focused personal project to build a server monitoring and l
 - Built the API into a container image
 - Ran the API in Docker and tested endpoints
 
+### Day 4
+- Added Docker Compose setup at the project root
+- Connected the API service to Compose
+- Started the project using one command
+- Tested API endpoints through Docker Compose
+
 ## Planned Stack
 - Node.js
 - TypeScript
 - Express
 - Docker
+- Docker Compose
 - Prometheus
 - Grafana
 - Loki

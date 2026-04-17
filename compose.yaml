@@ -1,0 +1,11 @@
+services:
+  api:
+    build:
+      context: ./services/api
+    container_name: server-monitoring-api
+    ports:
+      - "4000:4000"
+
+
+
+      
