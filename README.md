@@ -35,6 +35,12 @@ A backend and DevOps-focused personal project to build a server monitoring and l
 - Started the project using one command
 - Tested API endpoints through Docker Compose
 
+### Day 5
+- Added Prometheus metrics to the API
+- Exposed a /metrics endpoint
+- Added request count and duration tracking
+- Added Prometheus service and scrape configuration
+
 ## Planned Stack
 - Node.js
 - TypeScript
