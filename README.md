@@ -47,6 +47,12 @@ A backend and DevOps-focused personal project to build a server monitoring and l
 - Verified Grafana can connect to Prometheus
 - Prepared the project for dashboards in the next step
 
+### Day 7
+- Added a provisioned Grafana dashboard
+- Added panels for total requests, request rate, and request duration
+- Enabled dashboard auto-loading on startup
+- Verified the dashboard reads live Prometheus metrics
+
 ## Planned Stack
 - Node.js
 - TypeScript
