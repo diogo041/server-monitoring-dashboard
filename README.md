@@ -41,6 +41,12 @@ A backend and DevOps-focused personal project to build a server monitoring and l
 - Added request count and duration tracking
 - Added Prometheus service and scrape configuration
 
+### Day 6
+- Added Grafana service to Docker Compose
+- Provisioned Prometheus as a Grafana datasource automatically
+- Verified Grafana can connect to Prometheus
+- Prepared the project for dashboards in the next step
+
 ## Planned Stack
 - Node.js
 - TypeScript
