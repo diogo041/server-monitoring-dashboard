@@ -1,5 +1,6 @@
 import { NextFunction, Request, Response } from "express";
 import { httpRequestDurationMs, httpRequestTotal } from "../lib/metrics";
+import { logger } from "../utils/logger";
 
 export const requestLogger = (
   req: Request,
@@ -12,10 +13,6 @@ export const requestLogger = (
     const durationMs = Date.now() - startTime;
     const route = req.path || "/";
     const statusCode = res.statusCode.toString();
-
-    console.log(
-      `[${new Date().toISOString()}] ${req.method} ${req.originalUrl} ${res.statusCode} - ${durationMs}ms`
-    );
 
     httpRequestTotal.inc({
       method: req.method,
@@ -31,6 +28,17 @@ export const requestLogger = (
       },
       durationMs
     );
+
+    logger.info("http_request_completed", {
+      event: "http_request_completed",
+      method: req.method,
+      route,
+      originalUrl: req.originalUrl,
+      statusCode: res.statusCode,
+      durationMs,
+      ip: req.ip,
+      userAgent: req.get("user-agent") ?? "unknown"
+    });
   });
 
   next();

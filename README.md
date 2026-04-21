@@ -53,6 +53,12 @@ A backend and DevOps-focused personal project to build a server monitoring and l
 - Enabled dashboard auto-loading on startup
 - Verified the dashboard reads live Prometheus metrics
 
+### Day 8
+- Added structured JSON logging
+- Improved request logs with consistent analytics fields
+- Added startup, warning, and error log events
+- Prepared logs for future Loki integration
+
 ## Planned Stack
 - Node.js
 - TypeScript
