@@ -59,6 +59,12 @@ A backend and DevOps-focused personal project to build a server monitoring and l
 - Added startup, warning, and error log events
 - Prepared logs for future Loki integration
 
+### Day 9
+- Added Loki for log storage and querying
+- Added Promtail to ship API log files into Loki
+- Added a Loki datasource in Grafana
+- Verified API logs can be explored from Grafana
+
 ## Planned Stack
 - Node.js
 - TypeScript
