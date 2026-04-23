@@ -5,6 +5,8 @@ services:
     container_name: server-monitoring-api
     ports:
       - "4100:4100"
+    volumes:
+      - api-logs:/app/logs
 
   prometheus:
     image: prom/prometheus:latest
@@ -27,4 +29,28 @@ services:
       - ./monitoring/grafana/dashboards:/var/lib/grafana/dashboards:ro
     depends_on:
       - prometheus
-      
+      - loki
+
+  loki:
+    image: grafana/loki:latest
+    container_name: server-monitoring-loki
+    ports:
+      - "3200:3100"
+    command: -config.file=/etc/loki/loki-config.yml
+    volumes:
+      - ./monitoring/loki/loki-config.yml:/etc/loki/loki-config.yml:ro
+
+  promtail:
+    image: grafana/promtail:latest
+    container_name: server-monitoring-promtail
+    command: -config.file=/etc/promtail/promtail-config.yml
+    volumes:
+      - ./monitoring/promtail/promtail-config.yml:/etc/promtail/promtail-config.yml:ro
+      - api-logs:/var/log/server-monitoring:ro
+    depends_on:
+      - api
+      - loki
+
+volumes:
+  api-logs:
+  
